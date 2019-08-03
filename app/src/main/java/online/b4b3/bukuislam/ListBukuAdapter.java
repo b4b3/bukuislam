@@ -28,9 +28,8 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.ListVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder listViewHolder, int position) {
+    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
     Buku buku = listBuku.get(position);
-
 
 
         Glide.with(holder.itemView.getContext())
@@ -38,10 +37,10 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.ListVi
                 .apply(new RequestOptions().override(55,55))
                 .into(holder.imgPhoto);
         holder.tvJudul.setText(buku.getJudul());
-        holder.tvPengarang.setText(buku.getPengarang());
-        holder.tvPenerbit.setText(buku.getPenerbit());
+       // holder.tvPengarang.setText(buku.getPengarang());
+       // holder.tvPenerbit.setText(buku.getPenerbit());
         holder.tvDeskripsi.setText(buku.getPengarang());
-        holder.tvHarga.setText(buku.getHarga());
+       // holder.tvHarga.setText(buku.getHarga());
 
 
 

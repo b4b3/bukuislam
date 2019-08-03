@@ -3,8 +3,8 @@ package online.b4b3.bukuislam;
 import java.util.ArrayList;
 
 public class DataBuku {
-    public static String[][] data = new String[][]{
-            {"Ahmad Dahlan", "Pengarang.", "Penerbit", "50000", "Deskripsi","@drawable/poster_a_star"},
+    static String[][] data = new String[][]{
+            {"Ahmad Dahlan", "Pengarang.", "Penerbit", "50000", "Deskripsi","@drawable/gambar_1.jpg"},
             {"Ahmad Dahlan", "Pengarang.", "Penerbit", "50000", "Deskripsi","@drawable/poster_a_star"}
            };
     public static ArrayList<Buku> getListData(){
