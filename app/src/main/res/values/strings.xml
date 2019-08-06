@@ -1,5 +1,16 @@
 <resources>
-    <string name="app_name">bukuislam</string>
+    <string name="app_name">Katalog Buku</string>
     <string name="judul">Judul</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="about">About</string>
+
+    <string name="penerbit">penerbit</string>
+    <string name="harga">harga</string>
+    <string name="pengarang">pengarang</string>
+    <string name="detail_penerbit">Penerbit :</string>
+    <string name="detil_pengarang">Pengarang :</string>
+    <string name="detil_deskrpisi">Deskripsi :</string>
+    <string name="detil_harga">Harga : Rp.</string>
+    <string name="email">email : abuaisyah176@gmail.com</string>
+    <string name="nama_profil">Shofinurdin</string>
 </resources>

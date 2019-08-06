@@ -16,9 +16,17 @@ import java.util.ArrayList;
 public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.ListViewHolder> {
     private ArrayList<Buku> listBuku;
 
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
     public ListBukuAdapter(ArrayList<Buku> list) {
         this.listBuku = list;
     }
+
+
 
     @NonNull
     @Override
@@ -27,24 +35,36 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.ListVi
         return new ListViewHolder(view);
     }
 
+
+
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, final int position) {
     Buku buku = listBuku.get(position);
 
 
         Glide.with(holder.itemView.getContext())
                 .load(buku.getGambar())
-                .apply(new RequestOptions().override(55,55))
+                .apply(new RequestOptions().override(100,100))
                 .into(holder.imgPhoto);
+
+
         holder.tvJudul.setText(buku.getJudul());
        // holder.tvPengarang.setText(buku.getPengarang());
        // holder.tvPenerbit.setText(buku.getPenerbit());
-        holder.tvDeskripsi.setText(buku.getPengarang());
+        holder.tvDeskripsi.setText(buku.getDeskripsi());
        // holder.tvHarga.setText(buku.getHarga());
 
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listBuku.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -60,5 +80,9 @@ public class ListBukuAdapter extends RecyclerView.Adapter<ListBukuAdapter.ListVi
             tvJudul = itemView.findViewById(R.id.tv_item_judul);
             tvDeskripsi = itemView.findViewById(R.id.tv_item_deskripsi);
         }
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Buku data);
     }
 }

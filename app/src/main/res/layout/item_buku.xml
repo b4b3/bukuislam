@@ -20,6 +20,7 @@
         android:layout_toEndOf="@id/img_item_gambar"
         android:layout_toRightOf="@id/img_item_gambar"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tv_item_judul"
             android:layout_width="match_parent"
@@ -33,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="4"
             tools:text="@string/deskripsi" />
 
     </LinearLayout>
